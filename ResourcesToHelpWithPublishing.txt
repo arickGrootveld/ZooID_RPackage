@@ -1,0 +1,7 @@
+These are resources I've been using to help me publish this package. If your interested in publishing your
+own package, I'd highly recommend these resources (and if the authors of any of these resources see this,
+thank you very much for the helpful content)
+
+- https://www.r-bloggers.com/2020/07/how-to-write-your-own-r-package-and-publish-it-on-cran/
+- https://github.com/r-lib/available
+- https://r-pkgs.org/
