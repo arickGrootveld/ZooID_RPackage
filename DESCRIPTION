@@ -5,7 +5,7 @@ Version: 0.1.0
 Authors@R: c(
   person("Arick", "Grootveld", email = "arick.grootveld@gmail.com", role = c("cre","aut")),
   person("Eva", "Rose-Kozak", role=c("cre"))
-  ),
+  )
 Maintainer: Arick Grootveld <arick.grootveld@gmail.com>
 Description: This tool provides functions to load, segment and classify zooplankton images. Functions specific to image loading are pulled directly from OpenCV.
 Language: en-US
