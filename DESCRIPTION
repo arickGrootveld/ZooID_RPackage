@@ -1,10 +1,13 @@
 Package: ZooID
 Type: Package
-Title: Load, Segment And Classify Zooplankton Images
+Title: Load, Segment and Classify Zooplankton Images
 Version: 0.1.0
-Author: person("Arick", "Grootveld", email = "arick.grootveld@gmail.com", role = c("cre","aut")),
+Authors@R: c(
+    person("Arick", "Grootveld", email = "arick.grootveld@gmail.com", role = c("cre","aut")),
+    person("Eva", "Rose-Kozak", role=c("cre"))
+),
 Maintainer: Arick Grootveld <arick.grootveld@gmail.com>
-Description: Provides tools to load, segment and classify zooplankton images
+Description: This tool provides functions to load, segment and classify zooplankton images. Functions specific to image loading are pulled directely from OpenCV.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
