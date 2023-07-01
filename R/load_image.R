@@ -10,8 +10,7 @@
 #' @importFrom opencv "%>"
 
 load_image <- function(filePath) {
-  print("Hello, world!")
 
-  testStr = "This is just a string"
+  testStr = "This is just a template string till I add the actual functionality in here"
   return(testStr)
 }
