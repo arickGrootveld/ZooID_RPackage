@@ -20,8 +20,8 @@ datasetPreProcessing(
 \item{minPixels}{Integer specifying the minimum number of pixels allowed in an extracted image
 See "batch_imagePreProcessing" for details [Default: 5000]}
 
-\item{imageExtension}{String specifying the extension the images will have 
-[Default: "jpg"]}
+\item{imageExtension}{String specifying the extension the images will have (must include ".")
+[Default: ".jpg"]}
 
 \item{verbose}{Boolean variable indicating whether the script should print info to console
 [Default: TRUE]}
@@ -31,7 +31,7 @@ Preprocessing a directory structure of zooplankton images, and saving the result
              to another directory structure
 }
 \examples{
-\dotrun{
+\dontrun{
 zpFileDir <- 'Users/$(whoami)/Images/ZooplanktonImages'
 zpSaveDir <- 'Users/$(whoami)/Images/ExtractedImages'
 batchPreProcessing(zpImgDir, zpSaveDir)

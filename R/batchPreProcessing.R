@@ -6,12 +6,14 @@
 #' @param minPixels Integer specifying the minimum number of pixels allowed in an extracted image
 #'                  Any extracted image with fewer pixels will not be saved
 #'                  [Default:  5000 (~70 by 70 pixels)]
+#' @param imageExtension String specifying the extension the images will have (must include ".")
+#'                       [Default: ".jpg"]
 #' @param noRepeats Boolean variable to decide whether to ignore images that are already present in
 #'                  the save dir, or not [Default: TRUE]
 #' @param verbose Boolean variable indicating whether the script should print info to console
 #'                [Default: TRUE]
 #' @examples
-#' \dotrun{
+#' \dontrun{
 #' zpFileDir <- 'Users/$(whoami)/Images/ZooplanktonImages/ostracod'
 #' zpSaveDir <- 'Users/$(whoami)/Images/ExtractedImages/ostracod'
 #' batchPreProcessing(zpFileDir, zpSaveDir)
@@ -19,10 +21,7 @@
 #' @export
 #' @importFrom magick image_write image_data
 
-batchPreProcessing <-function(zpFileDir, zpSaveDir, minPixels=5000, noRepeats=TRUE, verbose=TRUE) {
-  
-  ## TODO: Figure out how to import another function from another file in
-  ## TODO: this directory to be used by this file (and document its usage)
+batchPreProcessing <-function(zpFileDir, zpSaveDir, minPixels=5000, imageExtension=".jpg", noRepeats=TRUE, verbose=TRUE) {
   
   # Making sure the directory paths end in a "/" character for parsing reasons
   lastChar <- substr(zpFileDir, nchar(zpFileDir), nchar(zpFileDir))
@@ -43,10 +42,10 @@ batchPreProcessing <-function(zpFileDir, zpSaveDir, minPixels=5000, noRepeats=TR
   for(targZpImageFname in zpImageFilenames){
     # Parsing out the image filenames sans the extension
     # Code stolen from: https://stackoverflow.com/questions/14173754/splitting-a-file-name-into-name-extension #
-    splitStrList <- strsplit(targZpImageFname, "\\.")[[1]]
+    splitStrList <- strsplit(targZpImageFname, imageExtension)[[1]]
     
     # Creating new filename that appends "_extracted" before the extension
-    targZpImageExtFname <- paste(splitStrList[1], "_extracted", ".", splitStrList[2], sep="")
+    targZpImageExtFname <- paste(splitStrList[1], "_extracted", imageExtension, sep="")
     # Further messing with paths to get the right directories for the image to be saved/loaded from
     targZpImageExtFullPath <- paste(zpSaveDir, targZpImageExtFname, sep="")
 

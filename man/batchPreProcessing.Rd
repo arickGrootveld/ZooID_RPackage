@@ -8,6 +8,7 @@ batchPreProcessing(
   zpFileDir,
   zpSaveDir,
   minPixels = 5000,
+  imageExtension = ".jpg",
   noRepeats = TRUE,
   verbose = TRUE
 )
@@ -21,6 +22,9 @@ batchPreProcessing(
 Any extracted image with fewer pixels will not be saved
 [Default:  5000 (~70 by 70 pixels)]}
 
+\item{imageExtension}{String specifying the extension the images will have (must include ".")
+[Default: ".jpg"]}
+
 \item{noRepeats}{Boolean variable to decide whether to ignore images that are already present in
 the save dir, or not [Default: TRUE]}
 
@@ -31,7 +35,7 @@ the save dir, or not [Default: TRUE]}
 Preprocessing a directory of zooplankton images
 }
 \examples{
-\dotrun{
+\dontrun{
 zpFileDir <- 'Users/$(whoami)/Images/ZooplanktonImages/ostracod'
 zpSaveDir <- 'Users/$(whoami)/Images/ExtractedImages/ostracod'
 batchPreProcessing(zpFileDir, zpSaveDir)

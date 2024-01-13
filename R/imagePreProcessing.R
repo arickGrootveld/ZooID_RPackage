@@ -11,6 +11,7 @@
 #' }
 #' @export
 #' @importFrom magick image_data image_canny image_read image_convolve image_crop
+#' @importFrom stats kmeans
 
 
 imagePreProcessing <-function(zpFilepath) {

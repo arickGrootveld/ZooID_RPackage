@@ -6,12 +6,12 @@
 #' @param zpSaveDir Directory to setup the subdirectory structure for the extracted images
 #' @param minPixels Integer specifying the minimum number of pixels allowed in an extracted image
 #'                  See "batch_imagePreProcessing" for details [Default: 5000]
-#' @param imageExtension String specifying the extension the images will have 
-#'                      [Default: "jpg"]
+#' @param imageExtension String specifying the extension the images will have (must include ".")
+#'                      [Default: ".jpg"]
 #' @param verbose Boolean variable indicating whether the script should print info to console
 #'                [Default: TRUE]
 #' @examples
-#' \dotrun{
+#' \dontrun{
 #' zpFileDir <- 'Users/$(whoami)/Images/ZooplanktonImages'
 #' zpSaveDir <- 'Users/$(whoami)/Images/ExtractedImages'
 #' batchPreProcessing(zpImgDir, zpSaveDir)
@@ -65,7 +65,7 @@ datasetPreProcessing <- function(zpFileDir, zpSaveDir, minPixels=5000, imageExte
       # Because of how the code is formatted, it will look at all files in the directory regardless of whether they are image files or
       # not, and regardless of the extension, so users should make sure that they do not include non-image files
       # in the directories they want images processed from
-      batchPreProcessing(zpFileDir=targSubDir, zpSaveDir = subdirPath_SaveDir, noRepeats=TRUE, verbose=verbose)
+      batchPreProcessing(zpFileDir=targSubDir, zpSaveDir = subdirPath_SaveDir, imageExtension=imageExtension, noRepeats=TRUE, verbose=verbose)
     }
     
   }
