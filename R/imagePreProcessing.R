@@ -89,7 +89,7 @@ imagePreProcessing <-function(zpFilepath) {
     minY <- min(y)
     
     boxMaskArray <- array(0, dim=c(dim(mat)[1], dim(mat)[2], 3))
-    boxMaskArray[minX:maxX, minY:maxY, ] = 255
+    boxMaskArray[minX:maxX, minY:maxY, ] <- 255
     
     boxMaskImage <- image_read(boxMaskArray)
     
@@ -111,7 +111,7 @@ imagePreProcessing <-function(zpFilepath) {
     ind1 <- maxY - minY
     ind2 <- maxX - minX
     
-    targGeometry = paste(as.character(ind1), "x", as.character(ind2), "+", as.character(minY), "+", as.character(minX), sep="")
+    targGeometry <- paste(as.character(ind1), "x", as.character(ind2), "+", as.character(minY), "+", as.character(minX), sep="")
     
     extractedImage <- image_crop(maskedImage, geometry=targGeometry)
     
